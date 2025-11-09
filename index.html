@@ -64,7 +64,7 @@
             font-weight: bold;
         }
 
-        /* HERO CHALLENGE BLOCK (Replaced "Urgent Motivation") */
+        /* HERO CHALLENGE BLOCK */
         .hero-challenge {
             padding: 25px;
             margin: 30px 0;
@@ -91,7 +91,7 @@
             text-transform: uppercase;
         }
 
-        /* PROFILE DASHBOARD (Replaced "Data Status") */
+        /* PROFILE DASHBOARD */
         .profile-dashboard {
             display: grid;
             grid-template-columns: 1fr 2.5fr;
@@ -148,7 +148,7 @@
             font-weight: bold;
         }
 
-        /* MISSION OBJECTIVES (Replaced "Execution Block") */
+        /* MISSION OBJECTIVES */
         .mission-objectives {
             margin-bottom: 30px;
             padding: 25px;
@@ -254,6 +254,118 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
+
+        /* =================================== */
+        /* === MOBILE RESPONSIVE DESIGN === */
+        /* =================================== */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                margin: 20px auto;
+                padding: 20px 15px; /* Less horizontal padding */
+            }
+
+            header h1 {
+                font-size: 2.2em; /* Scaled down */
+            }
+            header p {
+                font-size: 1.1em;
+            }
+
+            .hero-challenge h2 {
+                font-size: 1.4em;
+            }
+            .consequence {
+                font-size: 1.2em;
+            }
+
+            /* --- Key Mobile Change: Stacking Profile --- */
+            .profile-dashboard {
+                grid-template-columns: 1fr; /* Stack image and data */
+                gap: 25px;
+            }
+            
+            .data-log {
+                text-align: center; /* Center log text */
+            }
+
+            .data-log li {
+                flex-direction: column; /* Stack label and value */
+                align-items: center;
+                margin-bottom: 15px;
+                line-height: 1.4;
+            }
+
+            .data-log strong {
+                min-width: 0; /* Remove fixed width */
+                margin-bottom: 3px;
+                font-size: 0.9em;
+            }
+            .data-log span {
+                font-size: 1.1em;
+            }
+            /* --- End Profile Change --- */
+
+
+            /* --- Key Mobile Change: Wrapping Timer --- */
+            #countdown-timer {
+                flex-wrap: wrap; /* Allow timer to wrap to 2x2 */
+                gap: 10px; /* Tighter gap */
+            }
+            .timer-unit {
+                padding: 10px;
+                min-width: 70px; /* Smaller boxes */
+                flex-grow: 1; /* Allow boxes to grow and fill space */
+            }
+            .timer-unit span {
+                font-size: 1.8em; /* Scaled down timer font */
+            }
+            .timer-unit p {
+                font-size: 0.7em;
+            }
+            /* --- End Timer Change --- */
+
+            .mission-objectives h2,
+            .target-lock h2 {
+                font-size: 1.5em; /* Scale down section headers */
+            }
+
+            .execution-list li {
+                padding: 15px;
+                font-size: 1.0em; /* Smaller list text */
+                flex-direction: column; /* Stack icon and text */
+                align-items: flex-start;
+            }
+            .execution-list li span {
+                margin-bottom: 5px;
+                font-size: 1.1em;
+            }
+        }
+        
+        @media (max-width: 480px) {
+             header h1 {
+                font-size: 1.8em; /* Even smaller for phones */
+            }
+            header p {
+                font-size: 1.0em;
+            }
+            .container {
+                 padding: 15px 10px;
+            }
+            .hero-challenge,
+            .profile-dashboard,
+            .mission-objectives,
+            .target-lock {
+                padding: 20px;
+            }
+            #countdown-timer {
+                gap: 8px;
+            }
+            .timer-unit {
+                 padding: 10px 5px;
+            }
+        }
+
     </style>
 
     <script>
@@ -271,7 +383,6 @@
 
         // Start Live Countdown Timer
         function startCountdown() {
-            // *** UPDATED TARGET DATE AS REQUESTED ***
             // Set target date for JEE 2026 (Jan 21, 2026, 9:00 AM)
             const targetDate = new Date("January 21, 2026 09:00:00").getTime();
 
@@ -326,7 +437,7 @@
         <p class="consequence">
             MEDIOCRITY IS A CHOICE. SO IS EXCELLENCE. <br>
             THE DIFFERENCE IS TODAY'S WORK.
-        </p>
+        </SO>
         <h2>DEFINE YOUR LEGACY.</h2>
     </div>
 
@@ -347,7 +458,7 @@
     </div>
 
     <div class="target-lock">
-        <h2>TARGET LOCK: JEE 2026</h2>
+        <h2>TARGET LOCK: 21 JAN 2026</h2>
         <div id="countdown-timer">
             </div>
         <p style="color: var(--text-secondary);">
